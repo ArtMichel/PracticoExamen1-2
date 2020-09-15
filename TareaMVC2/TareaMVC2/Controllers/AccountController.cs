@@ -54,6 +54,7 @@ namespace TareaMVC2.Controllers
 
         //
         // GET: /Account/Login
+        [Authorize]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -64,6 +65,7 @@ namespace TareaMVC2.Controllers
         //
         // POST: /Account/Login
         [HttpPost]
+        [Authorize]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
@@ -136,6 +138,7 @@ namespace TareaMVC2.Controllers
 
         //
         // GET: /Account/Register
+        [Authorize]
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -145,7 +148,7 @@ namespace TareaMVC2.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
